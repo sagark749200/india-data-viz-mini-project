@@ -2,9 +2,11 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 import streamlit as st
+import os
 st.set_page_config(layout="wide")
 
-final_df = pd.read_csv('India.csv')
+csv_path = os.path.join(os.path.dirname(__file__), 'india.csv')
+final_df = pd.read_csv(csv_path)
 list_of_states = list(final_df['State'].unique())
 list_of_states.insert(0,'Overall India')
 
